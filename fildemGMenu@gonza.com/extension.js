@@ -37,7 +37,7 @@ global.__GTK_ALLOW_DEPRECATED = true;
 function log(msg) {
 	const debug = true;
 	if (debug)
-		global.log('[FILDEM_MENU] ' + msg);
+		log('[FILDEM_MENU] ' + msg);
 }
 
 const CircularObjectValue = () => {
@@ -505,7 +505,7 @@ const MenuBar = class MenuBar {
 				this.setMenus(cachedValue);
 			}
 
-			// global.log(`app id: ${focusApp.get_id()} win id: ${win.get_id()}`);
+			// log(`app id: ${focusApp.get_id()} win id: ${win.get_id()}`);
 			// TODO check pixel-saver extension for others way of obtaining xid
 			let xid = '';
 			try {
@@ -657,7 +657,7 @@ class MyProxy {
 	}
 
 	async _onMenuActivated(proxy, nameOwner, args) {
-		global.log(`TestSignal: ${args[0]}`);
+		log(`TestSignal: ${args[0]}`);
 	}
 
 	async _onSendTopLevelMenus(proxy, nameOwner, args) {
@@ -690,7 +690,7 @@ class MyProxy {
 	}
 
 	_onNameOwnerChanged(proxy, sender, [name, oldOwner, newOwner]) {
-		global.log(`${name} ${oldOwner} ${newOwner}`)
+		log(`${name} ${oldOwner} ${newOwner}`)
 	}
 
 	async WindowSwitched(windowData) {
